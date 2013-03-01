@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class GsonConnectorTest {
 
@@ -23,7 +24,10 @@ public class GsonConnectorTest {
         assertEquals(EASY_START_LOCATION, gsonConnector.start().getLocationId());
     }
 
-
+    @Test
+    public void canGetCurrentLocationType() throws IOException {
+        assertNotNull(gsonConnector.start().getLocationType());
+    }
 
 
 }
